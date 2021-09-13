@@ -1,28 +1,28 @@
-print('******* CALCULO NOTA DEFINITIVA ESTUDIANTE UNAB *******')
-ListaNotas = [0] * 6
+print('******* CALCULO NOTA DEFINITIVA ESTUDIANTE *******')
+ListaNotas = [0] * 10
 SumaNota10 = 0
 SumaNota90 = 0
 ErorText = ''
 Eror = False
 Notas = 0
-for i in range (6):
+for i in range (10):
     while True:
         try:
             Notas = float(input('Digite nota {}: '.format(i+1)))
-            if Notas <= 0 or Notas > 6:
-                print('******* Datos fuera de rango, solo valores de 1 a 6 *******')
+            if Notas <= 0 or Notas > 10:
+                print('******* Datos fuera de rango, solo valores de 1 a 10 *******')
                 continue
             else:
                 ListaNotas[i] = Notas
-                if i <= 2:
+                if i <= 6:
                     SumaNota10 += ListaNotas[i]
-                elif i > 2:
+                elif i > 6:
                     SumaNota90 += ListaNotas[i]
                 break
         except ValueError:
             print('Ha ocurrido un error: ')
-SumaNota10 = (SumaNota10 / 2) * 0.1
-SumaNota90 = (SumaNota90 / 4) * 0.2
+SumaNota10 = (SumaNota10 / 7) * 0.1
+SumaNota90 = (SumaNota90 / 3) * 0.9
 NotaDef = SumaNota10 + SumaNota90
 print(ListaNotas)
 print('                                                                      |          90%                |')
